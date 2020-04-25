@@ -9,7 +9,7 @@ export default function CharCard(props) {
     );
     const footer = (
         <span>
-            <a className="btn btn-primary" href={`/${props.character.house}/props.characters/${props.character.name}`}>Detalle</a>
+            <a className="btn btn-primary" href={`/${props.character.house}/characters/${props.character.id_character}`}>Detalle</a>
         </span>
     );
     return (
