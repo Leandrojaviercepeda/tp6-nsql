@@ -3,6 +3,7 @@ from db.characters import characters
 from flask_cors import CORS
 from flask import Flask, jsonify, request
 import json
+from bson import ObjectId
 
 app = Flask(__name__)
 CORS(app)
@@ -21,7 +22,9 @@ def insert_superheores_by_default():
 def marvel_characters():
     """Retorna todos los personajes de Marvel"""
     try:
-        marvel_list_characters = list(db_comics.characters.find({'house':'Marvel'},{"_id":0}))
+        marvel_list_characters = list(db_comics.characters.find({'house':'Marvel'}))
+        for char in marvel_list_characters:
+            char['_id'] = str(char['_id'])
         return jsonify(marvel_list_characters)
     except:
         raise
@@ -31,7 +34,9 @@ def marvel_characters():
 def dc_characters():
     """Retorna todos los personajes de DC"""
     try:
-        dc_list_characters = list(db_comics.characters.find({'house':'DC'},{"_id":0}))
+        dc_list_characters = list(db_comics.characters.find({'house':'DC'}))
+        for char in dc_list_characters:
+            char['_id'] = str(char['_id'])
         return jsonify(dc_list_characters)
     except:
         raise
@@ -42,14 +47,15 @@ def characters_abm():
     try:
         if request.method == 'DELETE':
             # Borramos el dpersonaje de la coleccion
-            delete_result = db_comics.characters.delete_one({"id_character": request.args['id']})
-            return {"deleted_count": delete_result.deleted_count}
+            delete_result = db_comics.characters.delete_one({"_id": ObjectId(request.args['id'])})
+            return 'ok'
 
         if request.method == 'GET':
             # Obtenemos el personaje de la coleccion por id
-            dc_character = list(db_comics.characters.find({"id_character": request.args['id']}, {"_id":0}))
+            dc_character = list(db_comics.characters.find({"_id": ObjectId(request.args['id'])}))
+            dc_character[0]['_id'] = str(dc_character[0]['_id'])
             return jsonify(dc_character)
-
+        
         if request.method == 'POST':
             # Insertamos el personaje en la coleccion
             insert_result = db_comics.characters.insert_one(request.get_json())
@@ -59,7 +65,7 @@ def characters_abm():
             character = request.get_json()
             for k in character:
                 # Editamos el personaje en la coleccion
-                insert_result = db_comics.characters.update_one({'id_character': character['id_character']}, {'$set': {k: character[k]}})
+                insert_result = db_comics.characters.update_one({'_id': ObjectId(character['id'])}, {'$set': {k: character[k]}})
             return 'OK'
     except:
         raise

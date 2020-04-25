@@ -1,5 +1,4 @@
 characters = [{
-        "id_character":"1",
         "name": "Hank Pym",
         "character_name": "Ant Man",
         "year of appearance": "1962",
@@ -8,7 +7,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"2",
         "name": "Steven Grant Rogers",
         "character_name": "Capitán América",
         "year of appearance": "1941",
@@ -17,7 +15,6 @@ characters = [{
         "equipment": "Escudo de vibranium",
         "amount_images": "4"
     },{
-        "id_character":"3",
         "name": "T'Challa",
         "character_name": "Pantera Negra",
         "year of appearance": "1966",
@@ -26,7 +23,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"4",
         "name": "Claire Voyant",
         "character_name": "Viuda Negra",
         "year of appearance": "1940",
@@ -35,7 +31,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"5",
         "name": "Stephen Strange",
         "character_name": "Doctor Strange",
         "year of appearance": "1963",
@@ -44,7 +39,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"6",
         "name": "Samuel Thomas Sam Wilson",
         "character_name": "Falcon",
         "year of appearance": "1969",
@@ -53,7 +47,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"7",
         "name": "Gamora Zen Whoberi Ben Titan",
         "character_name": "Gamora",
         "year of appearance": "1975",
@@ -62,7 +55,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"8",
         "name": "Clinton Francis Clint Barton",
         "character_name": "Ojo de Halcón",
         "year of appearance": "1964",
@@ -71,7 +63,6 @@ characters = [{
         "equipment": "Arco y flechas",
         "amount_images": "4"
     },{
-        "id_character":"9",
         "name": "Robert Bruce Banner",
         "character_name": "Hulk",
         "year of appearance": "1962",
@@ -80,7 +71,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"10",
         "name": "Anthony Edward Stark",
         "character_name": "Iron Man",
         "year of appearance": "1963",
@@ -89,7 +79,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"11",
         "name": "Johann Schmidt",
         "character_name": "Cráneo Rojo",
         "year of appearance": "1941",
@@ -98,7 +87,6 @@ characters = [{
         "equipment": "Cubo cósmico",
         "amount_images": "4"
     },{
-        "id_character":"12",
         "name": "Peter Benjamin Parker",
         "character_name": "Spider Man",
         "year of appearance": "1962",
@@ -107,7 +95,6 @@ characters = [{
         "equipment": "Mecanismos artificiales en sus muñecas que disparan telarañas",
         "amount_images": "4"
     },{
-        "id_character":"13",
         "name": "Peter Jason Quill",
         "character_name": "Star Lord",
         "year of appearance": "1976",
@@ -116,7 +103,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"14",
         "name": "Thanos The Titan",
         "character_name": "Thanos",
         "year of appearance": "1973",
@@ -125,7 +111,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"15",
         "name": "Thor Odinson",
         "character_name": "Thor",
         "year of appearance": "1962",
@@ -134,7 +119,6 @@ characters = [{
         "equipment": "Martillo encantado Mjolnir",
         "amount_images": "4"
     },{
-        "id_character":"16",
         "name": "Vision",
         "character_name": "Visión",
         "year of appearance": "1968",
@@ -143,7 +127,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"17",
         "name": "James Rupert Rhodes",
         "character_name": "Máquina de Guerra",
         "year of appearance": "1979",
@@ -152,7 +135,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"18",
         "name": "James Buchanan Bucky Barnes",
         "character_name": "Bucky Barnes",
         "year of appearance": "1941",
@@ -161,7 +143,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"19",
         "name": "Wade Winston Wilson",
         "character_name": "Deadpool",
         "year of appearance": "1991",
@@ -170,7 +151,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"20",
         "name": "Alfred Thaddeus Crane Pennyworth",
         "character_name": "Alfred Pennyworth",
         "year of appearance": "1943",
@@ -179,7 +159,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"21",
         "name": "Amanda Blake Waller",
         "character_name": "Amanda Waller",
         "year of appearance": "1986",
@@ -188,7 +167,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"22",
         "name": "Amy Winston",
         "character_name": "Amatista",
         "year of appearance": "1983",
@@ -197,7 +175,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"23",
         "name": "Lonnie Machin",
         "character_name": "Anarquía",
         "year of appearance": "1989",
@@ -206,7 +183,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"24",
         "name": "Mobius",
         "character_name": "Antimonitor",
         "year of appearance": "1985",
@@ -215,7 +191,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"25",
         "name": "Arthur Curry",
         "character_name": "Aquaman",
         "year of appearance": "1941",
@@ -224,7 +199,6 @@ characters = [{
         "equipment": "Tridente de Poseidón",
         "amount_images": "4"
     },{
-        "id_character":"26",
         "name": "Ares",
         "character_name": "Ares",
         "year of appearance": "1942",
@@ -233,7 +207,6 @@ characters = [{
         "equipment": "Armadura prácticamente indestructible, Espadas",
         "amount_images": "4"
     },{
-        "id_character":"27",
         "name": "Roy William Harper Jr",
         "character_name": "Arsenal",
         "year of appearance": "1941",
@@ -242,7 +215,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"28",
         "name": "Clark Joseph Kent",
         "character_name": "Superman",
         "year of appearance": "1938",
@@ -251,7 +223,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"29",
         "name": "Al Pratt",
         "character_name": "Átomo",
         "year of appearance": "1965",
@@ -260,7 +231,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"30",
         "name": "Atros",
         "character_name": "Atrocitus",
         "year of appearance": "2008",
@@ -269,7 +239,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"31",
         "name": "Antonio Diego Dorrance",
         "character_name": "Bane",
         "year of appearance": "1993",
@@ -278,7 +247,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"32",
         "name": "Barbara Gordon",
         "character_name": "Batgirl",
         "year of appearance": "1961",
@@ -287,7 +255,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"33",
         "name": "Bruce Wayne",
         "character_name": "Batman",
         "year of appearance": "1939",
@@ -296,7 +263,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"34",
         "name": "Katherine Rebecca Kate Kane",
         "character_name": "Batwoman",
         "year of appearance": "1956",
@@ -305,7 +271,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"35",
         "name": "Garfield Mark Logan",
         "character_name": "Beast Boy",
         "year of appearance": "1965",
@@ -314,7 +279,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"37",
         "name": "Barda Free",
         "character_name": "Big Barda",
         "year of appearance": "1971",
@@ -323,7 +287,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"38",
         "name": "Roman Sionis",
         "character_name": "Black Mask",
         "year of appearance": "1985",
@@ -332,7 +295,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"39",
         "name": "Diana de Temiscira",
         "character_name": "Mujer Maravilla",
         "year of appearance": "1941",
@@ -341,7 +303,6 @@ characters = [{
         "equipment": "Lazo de la Verdad, Brazaletes que repelen cualquier tipo de arma, Espada, Escudo, Tiara",
         "amount_images": "4"
     },{
-        "id_character":"40",
         "name": "Hal Jordan",
         "character_name": "Linterna Verde",
         "year of appearance": "1940",
@@ -350,7 +311,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"41",
         "name": "Jay Garrick",
         "character_name": "Flash",
         "year of appearance": "1940",
