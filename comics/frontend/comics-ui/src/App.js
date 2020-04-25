@@ -15,10 +15,10 @@ function App() {
       <Switch>
         <Route exact path='/' render={ () => <Redirect to='/home' component={ Home }/>}/>
         <Route exact path='/home' component={ Home }/>
-        <Route exact path='/:house/new' component={ NewChar }/>
+        {/* <Route exact path='/:house/new' component={ NewChar }/>
         <Route exact path='/:house/edit' component={ EditChar }/>
         <Route exact path='/:house/delete' component={ DeleteChar }/>
-        <Route exact path='/:house/characters/:name' component={ CharDetail }/>
+        <Route exact path='/:house/characters/:name' component={ CharDetail }/> */}
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

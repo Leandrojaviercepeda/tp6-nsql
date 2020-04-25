@@ -1,0 +1,14 @@
+.charName {
+    font-family: 'Times New Roman', Times, serif, Times, Georgia;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -1px;
+    color: #444
+}
+
+p {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
