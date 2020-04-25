@@ -21,7 +21,7 @@ def insert_superheores_by_default():
 def marvel_characters():
     """Retorna todos los personajes de Marvel"""
     try:
-        marvel_list_characters = list(db_comics.characters.find({'house':'marvel'},{"_id":0}))
+        marvel_list_characters = list(db_comics.characters.find({'house':'Marvel'},{"_id":0}))
         return jsonify(marvel_list_characters)
     except:
         raise
@@ -31,7 +31,7 @@ def marvel_characters():
 def dc_characters():
     """Retorna todos los personajes de DC"""
     try:
-        dc_list_characters = list(db_comics.characters.find({'house':'dc'},{"_id":0}))
+        dc_list_characters = list(db_comics.characters.find({'house':'DC'},{"_id":0}))
         return jsonify(dc_list_characters)
     except:
         raise
