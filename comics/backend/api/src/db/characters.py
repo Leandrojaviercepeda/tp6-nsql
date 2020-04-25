@@ -314,15 +314,6 @@ characters = [{
         "equipment": "",
         "amount_images": "4"
     },{
-        "id_character":"36",
-        "name": "Barda Free",
-        "character_name": "Big Barda",
-        "year of appearance": "1971",
-        "house": "DC",
-        "biography": "Tomado de su madre a una edad temprana, Barda creció en Apokolips en el Orfanato de Granny Goodness, donde fue entrenada en el arte de la batalla. Barda disfrutaba pelear y disfrutaba superando a cualquiera que la desafiara. Su gran poder y sus habilidades incomparables en combate rápidamente la convirtieron en la guerrera apokoliptiana más temida de todos los tiempos, una hazaña increíble para lograr en un mundo que crió a los luchadores más terroríficos, crueles y maliciosos del Multiverso. Las habilidades de Barda y su actitud de hacerse cargo incluso le permitieron convertirse en la líder de las Furias Femeninas, un grupo de guerreros feroces y poderosos que sirvieron como guardia personal del gobernante tiránico de Apokolips, Darkseid. Barda sirvió a Darkseid durante muchos años, hasta que conoció al Señor Milagro. Los dos se enamoraron y Barda comenzó a cuestionar la crueldad y la filosofía totalitaria de Darkseid. Finalmente, ella huyó a la Tierra, luchando a través de las hordas de Apokolips y sus antiguos aliados, derrotándolos a todos.",
-        "equipment": "",
-        "amount_images": "4"
-    },{
         "id_character":"37",
         "name": "Barda Free",
         "character_name": "Big Barda",
@@ -339,15 +330,6 @@ characters = [{
         "house": "DC",
         "biography": "El sádico Roman Sionis solo se preocupa por dos cosas: lastimar a las personas y el control total del inframundo criminal de Gotham City. Si puede usar uno para lograr el otro, entonces mucho mejor. En una ciudad llena de villanos que se declaran enemigos jurados de Batman, pocos comparten la misma enemistad por el multimillonario Bruce Wayne. Una excepción a esto es Roman Sionis, la Máscara Negra. Nacido en la riqueza y el poder tanto como Bruce Wayne, Roman no albergaba más que resentimiento por sus ricos padres y las muchas oportunidades que le ofrecían. Con una máscara de ébano fusionada en su rostro, Roman se dispuso a destruir a Bruce y tomar el control de la ciudad que le falló, por cualquier medio necesario.",
         "equipment": "",
-        "amount_images": "4"
-    },{
-        "id_character":"39",
-        "name": "Diana de Temiscira",
-        "character_name": "Mujer Maravilla",
-        "year of appearance": "1941",
-        "house": "DC",
-        "biography": "Una de las superhéroes DC más queridos e icónicos de todos los tiempos, Wonder Woman se ha mantenido durante casi ochenta años como un símbolo de verdad, justicia e igualdad para las personas en todas partes. Criada en la isla escondida de Themyscira, también conocida como Isla Paraíso, Diana es una amazona, como las figuras de la leyenda griega, y el regalo de su pueblo para la humanidad. Como emisaria de Themyscira en Mans World, Diana ha cumplido con su deber de predicar con el ejemplo, incluso si las diferencias entre su lugar de nacimiento y su nuevo hogar a veces presentan obstáculos para que ella salte. Ella ha llegado a representar la posibilidad y el potencial de la vida sin guerra, odio o violencia, y es un faro de esperanza para todos los que se encuentran en necesidad. Ella es una igual entre los superhéroes más poderosos, con un sentido de propósito para proteger al mundo de la injusticia en todas sus formas.",
-        "equipment": "Lazo de la Verdad, Brazaletes que repelen cualquier tipo de arma, Espada, Escudo, Tiara",
         "amount_images": "4"
     },{
         "id_character":"39",
