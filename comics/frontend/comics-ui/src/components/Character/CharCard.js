@@ -22,7 +22,16 @@ export default function CharCard(props) {
             header={header}
             >
             <div>
-                <p>{props.character.biography}</p>
+                <p
+                style={{
+                    width: '200px',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                }}
+                >
+                    {props.character.biography}
+                </p>
             </div>
         </Card>
     )
