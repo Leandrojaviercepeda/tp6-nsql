@@ -54,7 +54,7 @@ export default function List(props) {
     }
 
     return (
-        <div className="charactersList">
+        <div className="charsList">
             <div className="p-grid p-justify-center m5">
                 {
                     error.isError 

@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 
 import Header from '../Header'
 import CharsList from '../Characters/CharsList'
+import CharsSearcher from '../Characters/CharsSearcher'
+import CharsSelector from '../Characters/CharsSelector'
 
 export default function Home() {
 
@@ -13,10 +15,15 @@ export default function Home() {
 
     return (
         <div>
-            <Header 
-                handleListSelected={handleListSelected} 
-                handleCharSearched={handleCharSearched}
-            />
+            <Header/>
+            <div className='p-grid p-justify-center m5'>
+                <CharsSearcher 
+                    handleCharSearched={handleCharSearched}
+                />
+                <CharsSelector 
+                    handleListSelected={handleListSelected}
+                />
+            </div>
             <CharsList 
                 listSelected={listSelected} 
                 charSearched={charSearched}

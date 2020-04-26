@@ -1,15 +1,15 @@
 import React from 'react';
 
 import {Menubar} from 'primereact/menubar';
-import {SplitButton} from 'primereact/splitbutton';
-import {InputText} from 'primereact/inputtext';
 import './css/style.css'
 
-import capitalize from '../../../utils/capitalize'
-
-export default function Navbar(props) {
-    
+export default function Navbar() {
     const menuItems = [
+      {
+        label: null,
+        icon: 'pi pi-home',
+        url: '/home',
+      },
       {
         label: null, 
         icon: 'fa fa-dc', 
@@ -28,38 +28,12 @@ export default function Navbar(props) {
       }
     ]
 
-    const buttonItems = [
-      {
-          label: 'DC',
-          icon: 'pi pi-list',
-          command: (e) => props.handleListSelected('dc')
-      },
-      {
-          label: 'Marvel',
-          icon: 'pi pi-list',
-          command: (e) => props.handleListSelected('marvel')
-      }
-    ]
-
-
     return (
       <nav className="m5">
-        <Menubar className='ui-menuitem' model={menuItems}>
-            <InputText 
-              placeholder="Search" 
-              type="text" 
-              onChange={e => props.handleCharSearched(capitalize(e.target.value))}/>
-            
-            <SplitButton 
-              label="Marvel & DC" 
-              icon="pi pi-list" 
-              onClick={() => props.handleListSelected('all')} 
-              model={buttonItems}
-              style={{marginLeft: 5}}
-            ></SplitButton>
-        </Menubar>
+        <Menubar className='ui-menuitem' model={menuItems}/>
       </nav>
-
    )
 }
+
+
       
