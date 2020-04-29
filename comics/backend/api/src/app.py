@@ -47,14 +47,16 @@ def characters_abm():
     try:
         if request.method == 'DELETE':
             # Borramos el dpersonaje de la coleccion
-            delete_result = db_comics.characters.delete_one({"_id": ObjectId(request.args['id'])})
+            delete_result = db_comics.characters.delete_one({"_id": ObjectId(request.args['_id'])})
             return 'ok'
 
         if request.method == 'GET':
             # Obtenemos el personaje de la coleccion por id
-            dc_character = list(db_comics.characters.find({"_id": ObjectId(request.args['id'])}))
-            dc_character[0]['_id'] = str(dc_character[0]['_id'])
-            return jsonify(dc_character)
+            args = [k for k in dict(request.args).keys()]
+            characters = list(db_comics.characters.find({"_id": ObjectId(request.args['_id'])})) if args[0] == '_id' else list(db_comics.characters.find({args[0]: request.args[args[0]]}))
+            for character in characters:
+                character['_id'] = str(character['_id'])
+            return jsonify(characters)
         
         if request.method == 'POST':
             # Insertamos el personaje en la coleccion
