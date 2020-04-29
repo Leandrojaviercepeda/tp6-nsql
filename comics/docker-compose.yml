@@ -17,15 +17,15 @@ services:
         ports:
             - '27017:27017'
 
-    # frontend:
-    #     build: ./frontend
-    #     container_name: 'comics-ui'
-    #     command: sh -c 'npm install; npm start'
-    #     ports:
-    #         - '3000:3000'
-    #     volumes:
-    #         - ./frontend/comics-ui:/frontend/comics-ui
-    #     depends_on:
-    #         - "api"
-    #     stdin_open: true
-    #     tty: true
+    frontend:
+        build: ./frontend
+        container_name: 'comics-ui'
+        command: sh -c 'npm install; npm start'
+        ports:
+            - '3000:3000'
+        volumes:
+            - ./frontend/comics-ui:/frontend/comics-ui
+        depends_on:
+            - "api"
+        stdin_open: true
+        tty: true
