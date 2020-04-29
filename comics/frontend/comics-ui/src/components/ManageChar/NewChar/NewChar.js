@@ -22,7 +22,7 @@ export default function NewChar(props) {
     let characterDefault = {
         name: '',
         character_name: '',
-        year: '',
+        year_of_appearance: '',
         house: house === 'dc' ? house.toUpperCase() : capitalize(house),
         biography: '',
         equipment: [],
@@ -37,35 +37,34 @@ export default function NewChar(props) {
 
     const handleName = name => setCharacter({...character, name:name})
     const handleCharacterName = charName => setCharacter({...character, character_name: charName})
-    const handleYear = year => setCharacter({...character, year: year})
+    const handleYearOfAppearance = year => setCharacter({...character, year_of_appearance: year})
     const handleBiography = biography => setCharacter({...character, biography: biography})
-    const handleEquipment = equipment => setCharacter({...character, equipment: equipment})
+    const handleEquipment = equipment => setCharacter({...character, 
+        equipment: equipment.length !== 0 ? equipment.map(e => e !== '' ? capitalize(e) : '') : equipment})
     const handleImages = images => setCharacter({...character, images: images})
-    const handleAmountImages = amountImages => setCharacter({...character, amount_images: amountImages})
+    const handleAmountImages = amountImages => setCharacter({...character, 
+        amount_images: amountImages >= 0 ? amountImages.toString() : '0'})
     const handleCharDefault = char => setCharacter(char)
     
     const handleSubmit = async e => {
         try {
             e.preventDefault()
-            console.log(character.equipment.length);
-            
+                        
             if (
                 character.character_name === '' ||
-                character.year === '' ||
+                character.year_of_appearance === '' ||
                 character.house === '' ||
                 character.biography === '' ||
-                character.equipment.length === 0 ||
                 character.images.length === 0 ||
-                character.amount_images <= 0
-            ) {
-                handleStatus(true, 'error', '¡Ooops, El unico campo vacio permitido es "Nombre"!')
-            } else {
-                await axios.post(`${ApiUrlBase}/characters`, character)
-                    .then(handleStatus(true, 'success', '¡Personaje guardado exitosamente! :)'))
-                    .then(setInterval(() => handleStatus(false), 5000))
-                    .then(handleCharDefault(characterDefault))
-            }
+                character.amount_images <= 0 ||
+                character.images.length < character.amount_images
+            ) 
+                return handleStatus(true, 'info', 'Debe tener en cuenta que los campos vacíos permitidos son "Nombre" y "Equipamiento", ademas la cantidad de imagenes para mostrar debe ser menor o igual a las ingresadas.')
             
+            return await axios.post(`${ApiUrlBase}/characters`, character)
+                .then(handleStatus(true, 'success', '¡Personaje guardado exitosamente! :)'))
+                .then(setInterval(() => handleStatus(false), 5000))
+                .then(handleCharDefault(characterDefault))            
         } catch (error) {
             handleStatus(true, 'error', '¡Ooops, ha ocurrido un error!')
         }
@@ -172,10 +171,10 @@ export default function NewChar(props) {
                                 </span>
                                 <InputMask 
                                     mask="9999" 
-                                    value={character.year}
+                                    value={character.year_of_appearance}
                                     placeholder="Año de aparicion"
                                     slotChar="yyyy" 
-                                    onChange={e => handleYear(e.target.value)}
+                                    onChange={e => handleYearOfAppearance(e.target.value)}
                                     required
                                 />
                             </div>
