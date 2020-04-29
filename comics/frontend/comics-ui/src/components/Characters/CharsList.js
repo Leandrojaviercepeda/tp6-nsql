@@ -18,7 +18,6 @@ export default function List(props) {
 
 
     useEffect(() => {
-        console.log('Characters Render 1°');
         const fetchCharacters = async listSelected => {
             try {
                 var charsList = null
@@ -42,7 +41,6 @@ export default function List(props) {
     }, [props]);
 
     useEffect(() => {
-        console.log('Characters Render 2°');
         if (error.isError && characters.length !== 0)
             handleIsError(false)
     }, [error, characters]);

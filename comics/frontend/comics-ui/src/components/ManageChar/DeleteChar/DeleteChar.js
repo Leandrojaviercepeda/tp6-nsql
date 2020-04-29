@@ -33,9 +33,7 @@ export default function DeleteChar(props) {
     const handleDeleteChar = async _id => {
         try{
 
-            const characterDeleted = await axios.delete(`${ApiUrlBase}/characters?_id=${_id}`)
-            console.log(characterDeleted.status);
-            
+            const characterDeleted = await axios.delete(`${ApiUrlBase}/characters?_id=${_id}`)            
             return characterDeleted.status === 200
                 ? handleStatus(true, 'success', '¡Personaje borrado exitosamente! :)')
                 : handleStatus(true, 'error', 'Ooops! No fue posible borrar el ersonaje :(')
@@ -45,7 +43,6 @@ export default function DeleteChar(props) {
     }
 
     useEffect(() => {
-        console.log('Rendering DeleteChar 1°');
         const fetchCharacter = async characterName => {
             try{
                 const characterFetched = await axios.get(`${ApiUrlBase}/characters?character_name=${characterName}`)
