@@ -10,7 +10,6 @@ export default function CharsSearcher(props) {
               placeholder="Search" 
               type="text" 
               onChange={e => props.handleCharSearched(capitalize(e.target.value))}
-              hiden
             />
         </div>
     )

@@ -24,7 +24,6 @@ export default function CharsSelector(props) {
               onClick={() => props.handleListSelected('all')} 
               model={buttonItems}
               style={{marginLeft: 5}}
-              hiden
             />
         </div>
     )
