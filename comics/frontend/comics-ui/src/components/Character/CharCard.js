@@ -14,7 +14,7 @@ export default function CharCard(props) {
     return (
         <Card 
             title={props.character.character_name} 
-            subTitle={props.character.name} 
+            subTitle={`${props.character.name} (${props.character.year_of_appearance})`} 
             style={{maxWidth: '280px', minWidth: '250px'}} 
             className="ui-card-shadow m5" 
             footer={footer} 

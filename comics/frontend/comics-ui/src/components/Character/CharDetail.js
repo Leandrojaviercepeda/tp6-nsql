@@ -72,7 +72,7 @@ export default function CharDetail(props) {
                                         style={{ background: 'white' }}
                                     />
                                 : 
-                                    character.images.map((img, i) => 
+                                    character.images.slice(0, parseInt(character.amount_images)).map((img, i) => 
                                         <img 
                                             src={img} 
                                             key={i+1} 
@@ -88,6 +88,8 @@ export default function CharDetail(props) {
                     <div className="p-col">
                         <Panel header={character.character_name} style={{textAlign: 'center'}}>
                             <h4 className="charName">Nombre: {character.name}</h4>
+                            <hr/>
+                            <p className="charName">Año de aparición: {character.year_of_appearance}</p>
                             <hr/>
                             <p>Casa: <span className={`fa fa-${character.house.toLowerCase()} m5`}style={{textAlign: 'center'}}/> </p>
                             <hr/>
