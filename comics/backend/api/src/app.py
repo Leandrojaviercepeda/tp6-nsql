@@ -67,7 +67,8 @@ def characters_abm():
             character = request.get_json()
             for k in character:
                 # Editamos el personaje en la coleccion
-                insert_result = db_comics.characters.update_one({'_id': ObjectId(character['id'])}, {'$set': {k: character[k]}})
+                if k != "_id":
+                    insert_result = db_comics.characters.update_one({"_id": ObjectId(character["_id"])}, {'$set': {k: character[k]}})
             return 'OK'
     except:
         raise
