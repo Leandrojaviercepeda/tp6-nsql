@@ -1,15 +1,14 @@
 import React from 'react';
 import {Card} from 'primereact/card';
-import './css/style.css'
 
 export default function CharCard(props) {
 
     const header = (
-        <img alt="Card" src={require(`../../utils/images/${props.character.house}/${props.character.character_name}/1.jpg`)}/>
+        <img alt="Card" src={`${props.character.images[0]}`}/>
     );
     const footer = (
         <span>
-            <a className="btn btn-primary" href={`/${props.character.house}/characters/${props.character.id_character}`}>Detalle</a>
+            <a className="detail" href={`/${props.character.house}/characters/${props.character._id}`}>Detalle</a>
         </span>
     );
     return (
