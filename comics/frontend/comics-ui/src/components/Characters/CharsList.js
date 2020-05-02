@@ -22,12 +22,10 @@ export default function List(props) {
             try {
                 var charsList = null
                 if (listSelected === 'all'){
-                    const charactersDCFetched = await axios.get(`${ApiUrlBase}/dc`)
-                    const charactersMarvelFetched = await axios.get(`${ApiUrlBase}/marvel`)
-                    if (charactersDCFetched.data && charactersMarvelFetched.data)
-                        charsList = [...charactersDCFetched.data, ...charactersMarvelFetched.data]
+                    const charactersFetched = await axios.get(`${ApiUrlBase}/characters`)
+                    charsList = charactersFetched.data
                 } else {
-                    const charactersFetched = await axios.get(`${ApiUrlBase}/${listSelected}`)
+                    const charactersFetched = await axios.get(`${ApiUrlBase}/characters?house=${listSelected}`)
                     charsList = charactersFetched.data
                 }
                 return charsList 

@@ -6,6 +6,7 @@ import {Message} from 'primereact/message'
 
 import axios from 'axios'
 import {ApiUrlBase} from '../../utils/constants'
+import capitalize from '../../utils/capitalize'
 
 export default function CharSelector(props) {
 
@@ -19,9 +20,9 @@ export default function CharSelector(props) {
     const handleCharSugestions = chars => setCharSuggestions(chars)
 
     useEffect(() => {
-        const fetchCharacters = async list => {
+        const fetchCharacters = async house => {
             try {
-                const charactersFetched = await axios.get(`${ApiUrlBase}/${list}`)
+                const charactersFetched = await axios.get(`${ApiUrlBase}/characters?house=${house === 'dc' ? house.toLocaleUpperCase() : capitalize(house)}`)
                 return charactersFetched.data 
                     ? handleCharacters(charactersFetched.data.map(char => char.character_name))
                     : handleStatus(true, 'error', 'No hay personajes para mostrar')
