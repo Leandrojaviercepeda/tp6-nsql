@@ -1,5 +1,6 @@
 from db.mongo import db_comics
 from db.characters import characters
+from db.movies import movies
 from flask_cors import CORS
 from flask import Flask, jsonify, request
 import json
@@ -14,6 +15,8 @@ def insert_superheores_by_default():
     try:
         db_comics.characters.drop()
         db_comics.characters.insert_many(characters)
+        db_comics.movies.drop()
+        db_comics.movies.insert_many(movies)
         return 'OK'
     except:
         raise
