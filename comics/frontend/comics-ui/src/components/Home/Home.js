@@ -12,7 +12,7 @@ export default function Home() {
         {brand: 'Personajes', key: 'Characters'},
         {brand: 'Películas', key: 'Movies'},
     ]
-    const [listSelected, setListSelected] = useState('Personajes')
+    const [listSelected, setListSelected] = useState('')
     const handleListSelected = list => setListSelected(list)
 
     const listTemplate = option => {
@@ -46,9 +46,12 @@ export default function Home() {
                 <div className="p-col m10">
                     <div className="p-grid p-justify-center">
                         {
-                            listSelected === 'Personajes'
-                                ? <Characters/>
-                                : <Movies/>
+                            listSelected !== ''
+                                ? 
+                                    listSelected === 'Personajes'
+                                    ? <Characters/>
+                                    : <Movies/>
+                                : null
                         }
                     </div>
                 </div>

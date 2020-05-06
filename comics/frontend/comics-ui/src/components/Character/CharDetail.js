@@ -28,8 +28,6 @@ export default function CharDetail(props) {
     const handleMoviesFromThisCharacter = movies => setMoviesFromThisCharacter(movies)
 
     useEffect(() => {
-        console.log('Rendering 1° CharDetail...');
-        
         const fetchCharacter = async charId => {
             try {
                 const characterFetched = await axios.get(`${ApiUrlBase}/characters?_id=${charId}`)
@@ -43,12 +41,11 @@ export default function CharDetail(props) {
         fetchCharacter(_id ? _id : props._id)
     }, [_id, props]);
 
-
     useEffect(() => {
         const fetchMovie = async () => {
             try {
                 const moviesFetched = await axios.get(`${ApiUrlBase}/movies`)
-                handleMovies(moviesFetched.data)
+                return handleMovies(moviesFetched.data)
             } catch (error) {
                 handleStatus(true, 'error' ,'Ooops! Ha ocurrido un error :(')
             }
@@ -57,21 +54,14 @@ export default function CharDetail(props) {
     }, []);
 
     useEffect(() => {
-        
-        const filterMoviesOfThisCharacter = (movies) => {
+        const filterMoviesOfThisCharacter = (movies, characterMovies) => {
             const moviesNames = [...movies.map(movie => movie.title)]
-            const moviesNamesOfThisCharacter = [...moviesNames.filter(movie => character.movies.includes(movie))]
-            
-            return (
-                handleMoviesFromThisCharacter([...movies.filter(movie => 
-                    moviesNamesOfThisCharacter.includes(movie.title))])
-            )
+            const moviesNamesOfThisCharacter = [...moviesNames.filter(movie => characterMovies.includes(movie))]
+            return handleMoviesFromThisCharacter([...movies.filter(movie => moviesNamesOfThisCharacter.includes(movie.title))])
         }
-        if(movies) {
-            filterMoviesOfThisCharacter(movies)
-
-        }
-    }, [movies]);
+        if(movies)
+            filterMoviesOfThisCharacter(movies, character.movies)
+    }, [movies, character]);
 
     return (
         <div className="charDetail">
@@ -139,10 +129,9 @@ export default function CharDetail(props) {
                                 ?
                                     moviesFromThisCharacter.map((movie) =>(
                                        <a href={`/movies/${movie._id}`}>{` ${movie.title},`}</a>         
-                                    ))       
+                                    ))
                                 : ""
                             }</p>
-            
                         </Panel>
                     </div>
 

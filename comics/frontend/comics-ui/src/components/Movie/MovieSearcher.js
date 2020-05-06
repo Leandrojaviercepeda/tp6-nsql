@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import {Button} from 'primereact/button';
 import {AutoComplete} from 'primereact/autocomplete';
+import {Message} from 'primereact/message';
 
 import axios from 'axios'
 import {TheMovieDBUrlBase} from '../../utils/constants'
@@ -44,7 +45,13 @@ export default function MovieSearcher(props) {
 
     return (
         <div className="movieSearcher">
-
+            <div className="p-grid p-justify-center m10">
+                {
+                    status.showMessage
+                    ? <Message severity={status.type} text={status.message}/>
+                    : null
+                }
+            </div>
             <div>
                 <h3>Ingrese una pelicula</h3>
                     <div>

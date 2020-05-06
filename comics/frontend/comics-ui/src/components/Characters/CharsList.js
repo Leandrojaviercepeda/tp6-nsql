@@ -15,7 +15,7 @@ export default function CharsList(props) {
     const [characters, setCharacters] = useState([])
     const handleCharacters = list => setCharacters(list)
 
-    useEffect(() => {
+    useEffect(() => {        
         const fetchCharacters = async listSelected => {
             try {
                 var charsList = null
@@ -34,7 +34,7 @@ export default function CharsList(props) {
             }
         }
         fetchCharacters(props.listSelected)
-    }, [props]);
+    }, [props.listSelected]);
 
     useEffect(() => {
         if (status.showMessage && characters.length !== 0)

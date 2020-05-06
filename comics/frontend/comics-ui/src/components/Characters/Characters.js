@@ -9,7 +9,7 @@ export default function Characters() {
     const handleListSelected = list => setListSelected(list)
     
     const [charSearched, setCharSearched] = useState('')
-    const handleCharSearched = list => setCharSearched(list)
+    const handleCharSearched = character => setCharSearched(character)
 
     return (
         <div>

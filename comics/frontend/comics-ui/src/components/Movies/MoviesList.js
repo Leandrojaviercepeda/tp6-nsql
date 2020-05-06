@@ -15,9 +15,7 @@ export default function MoviesList(props) {
     const [movies, setMovies] = useState([])
     const handleMovies = list => setMovies(list)
 
-    useEffect(() => {
-        console.log('Rendering 1° MoviesList');
-        
+    useEffect(() => {        
         const fetchMovies = async () => {
             try {
 

@@ -37,9 +37,7 @@ export default function MovieDetail(props) {
     const [charactersKnownFromThisMovie, setCharactersKnownFromThisMovie] = useState(null)
     const handleCharactersKnownFromThisMovie = characters => setCharactersKnownFromThisMovie(characters)
 
-    useEffect(() => {
-        console.log('Rendering 1° MovieDetail...');
-        
+    useEffect(() => {        
         const fetchMovie = async movieId => {
             try {
                 const movieFetched = await axios.get(`${ApiUrlBase}/movies?_id=${movieId}`)
@@ -53,9 +51,7 @@ export default function MovieDetail(props) {
         fetchMovie(_id ? _id : props._id)
     }, [_id, props]);
 
-    useEffect(() => {
-        console.log('Rendering 2° MovieDetail...');
-        
+    useEffect(() => {        
         const fetchCredits = async movieId => {
             try {
                 const creditsFetched = await axios.get(`${TheMovieDBUrlBase}/movie/${movieId}/credits?api_key=${TheMovieDB}`)
@@ -70,9 +66,7 @@ export default function MovieDetail(props) {
             fetchCredits(movie.id)
     }, [movie]);
 
-    useEffect(() => {
-        console.log('Rendering 3° MovieDetail...');
-        
+    useEffect(() => {        
         const fetchCharacters = async () => {
             try {
                 const charactersFetched = await axios.get(`${ApiUrlBase}/characters`)
@@ -86,9 +80,7 @@ export default function MovieDetail(props) {
         fetchCharacters()
     }, []);
 
-    useEffect(() => {
-        console.log('Rendering 4° MovieDetail...');
-        
+    useEffect(() => {        
         const filterCharactersOfThisMovie = (characters, casting) => {
             const charactersNames = [...characters.map(character => character.character_name)]
             const castingCharactersNames = [...casting.map(character => character.character.split(" / ").length > 1 
@@ -103,10 +95,9 @@ export default function MovieDetail(props) {
                     !charactersNames.includes(character))])
             )
         }
-        if(characters && credits) {
+        if(characters && credits) 
             filterCharactersOfThisMovie(characters, credits.cast)
 
-        }
     }, [characters, credits]);
 
     const header = (

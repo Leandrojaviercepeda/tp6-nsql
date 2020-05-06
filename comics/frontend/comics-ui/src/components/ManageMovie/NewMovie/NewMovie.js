@@ -48,9 +48,7 @@ export default function NewMovie() {
         }
     }
 
-    useEffect(() => {
-        console.log('Rendering 1° NewMovie...');
-        
+    useEffect(() => {        
         const fetchCredits = async movieId => {
             try {
                 const creditsFetched = await axios.get(`${TheMovieDBUrlBase}/movie/${movieId}/credits?api_key=${TheMovieDB}`)
@@ -65,9 +63,7 @@ export default function NewMovie() {
             fetchCredits(movieToSave.id)
     }, [movieToSave]);
 
-    useEffect(() => {
-        console.log('Rendering 2° MovieDetail...');
-        
+    useEffect(() => {        
         const fetchCharacters = async () => {
             try {
                 const charactersFetched = await axios.get(`${ApiUrlBase}/characters`)
@@ -81,9 +77,7 @@ export default function NewMovie() {
         fetchCharacters()
     }, []);
 
-    useEffect(() => {
-        console.log('Rendering 3° NewMovie...');
-        
+    useEffect(() => {        
         const filterCharactersOfThisMovie = (characters, casting) => {
             const charactersNames = [...characters.map(character => character.character_name)]
             const castingCharactersNames = [...casting.map(character => character.character.split(" / ").length > 1 
@@ -111,7 +105,7 @@ export default function NewMovie() {
                 }
             </div>
             {
-                    <div className="p-grid p-align-stretch vertical-container m10">
+                <div className="p-grid p-align-stretch vertical-container m10">
 
                     <div className="p-col">
                         <div className="box box-stretched">
@@ -154,7 +148,6 @@ export default function NewMovie() {
                         </Panel>
                     </div>
                 </div>
-        
             }
         </div>
     )
