@@ -1,8 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router'
+import React, {useState} from 'react';
 import MovieSearcher from '../../Movie/MovieSearcher'
 
-import {ProgressSpinner} from 'primereact/progressspinner'
 import {Panel} from 'primereact/panel';
 import {Message} from 'primereact/message';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
