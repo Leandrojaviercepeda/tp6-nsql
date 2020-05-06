@@ -63,7 +63,12 @@ def characters_abm():
 
             if request.args:
                 args = [k for k in dict(request.args).keys()]
-                characters = list(db_comics.characters.find({"_id": ObjectId(request.args['_id'])})) if args[0] == '_id' else list(db_comics.characters.find({args[0]: request.args[args[0]]}))
+                if args[0] == '_id':
+                    characters = list(db_comics.characters.find({"_id": ObjectId(request.args['_id'])}))    
+                elif args[0] == 'movies':
+                    characters = list(db_comics.characters.find({args[0]: request.args[args[0]]}))
+                else: 
+                    characters = list(db_comics.characters.find({args[0]: request.args[args[0]]}))
                 for character in characters:
                     character['_id'] = str(character['_id'])
                 return jsonify(characters)
