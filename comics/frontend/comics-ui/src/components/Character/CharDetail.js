@@ -21,6 +21,12 @@ export default function CharDetail(props) {
     const [character, setCharacter] = useState(null)
     const handleCharacter = character => setCharacter(character)
 
+    const [movies, setMovies] = useState(null)
+    const handleMovies = movies => setMovies(movies)
+
+    const [moviesFromThisCharacter, setMoviesFromThisCharacter] = useState(null)
+    const handleMoviesFromThisCharacter = movies => setMoviesFromThisCharacter(movies)
+
     useEffect(() => {
         console.log('Rendering 1° CharDetail...');
         
@@ -36,6 +42,36 @@ export default function CharDetail(props) {
         }       
         fetchCharacter(_id ? _id : props._id)
     }, [_id, props]);
+
+
+    useEffect(() => {
+        const fetchMovie = async () => {
+            try {
+                const moviesFetched = await axios.get(`${ApiUrlBase}/movies`)
+                handleMovies(moviesFetched.data)
+            } catch (error) {
+                handleStatus(true, 'error' ,'Ooops! Ha ocurrido un error :(')
+            }
+        }       
+        fetchMovie()
+    }, []);
+
+    useEffect(() => {
+        
+        const filterMoviesOfThisCharacter = (movies) => {
+            const moviesNames = [...movies.map(movie => movie.title)]
+            const moviesNamesOfThisCharacter = [...moviesNames.filter(movie => character.movies.includes(movie))]
+            
+            return (
+                handleMoviesFromThisCharacter([...movies.filter(movie => 
+                    moviesNamesOfThisCharacter.includes(movie.title))])
+            )
+        }
+        if(movies) {
+            filterMoviesOfThisCharacter(movies)
+
+        }
+    }, [movies]);
 
     return (
         <div className="charDetail">
@@ -96,6 +132,17 @@ export default function CharDetail(props) {
                             <p className="charEquip">Equipamiento: { `${character.equipment.map(e => e)}`}</p>
                             <hr/>
                             <p className="charBiography" align="justify">{character.biography}</p>
+                            <hr/>
+                            <p className="charBiography" align="justify">Peliculas en las que aparece:
+                            {
+                                moviesFromThisCharacter 
+                                ?
+                                    moviesFromThisCharacter.map((movie) =>(
+                                       <a href={`/movies/${movie._id}`}>{` ${movie.title},`}</a>         
+                                    ))       
+                                : ""
+                            }</p>
+            
                         </Panel>
                     </div>
 
