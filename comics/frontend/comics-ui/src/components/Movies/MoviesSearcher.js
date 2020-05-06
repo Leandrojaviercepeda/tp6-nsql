@@ -1,9 +1,16 @@
 import React from 'react';
 
-export default function MoviesSearcher() {
+import {InputText} from 'primereact/inputtext';
+import capitalize from '../../utils/capitalize'
+
+export default function MoviesSearcher(props) {
     return (
-        <div>
-        Not Implemented!
+        <div className="moviesSearcher">
+            <InputText 
+              placeholder="Search" 
+              type="text" 
+              onChange={e => props.handleMovieSearched(capitalize(e.target.value))}
+            />
         </div>
     )
 }
