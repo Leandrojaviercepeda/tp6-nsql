@@ -8,8 +8,7 @@ def connectionDB(host, port, database):
     except :
         raise
 
-#_host_db_comics ='db_comics'
-_host_db_comics ='localhost'
+_host_db_comics ='db_comics'
 _port_db_comics = 27017
 _db_comics = 'comics'
 
