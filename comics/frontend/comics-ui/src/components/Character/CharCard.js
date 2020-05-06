@@ -15,7 +15,6 @@ export default function CharCard(props) {
         <Card 
             title={props.character.character_name} 
             subTitle={`${props.character.name} (${props.character.year_of_appearance})`} 
-            style={{maxWidth: '280px', minWidth: '250px'}} 
             className="ui-card-shadow m5" 
             footer={footer} 
             header={header}
@@ -23,7 +22,7 @@ export default function CharCard(props) {
             <div>
                 <p
                 style={{
-                    width: '200px',
+                    width: '75px',
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
